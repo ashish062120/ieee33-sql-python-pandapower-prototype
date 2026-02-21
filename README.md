@@ -13,7 +13,7 @@ To reflect a modern data-driven approach in network modelling, this workflow sim
 3. SQL queries used for validation and analytics  
 4. Python integrates with the database to build a pandapower model  
 5. Time-series load flow simulation performed  
-6. Results visualised using plots  
+6. Results visualised using plots and violation checks
 
 ---
 
@@ -24,7 +24,7 @@ To reflect a modern data-driven approach in network modelling, this workflow sim
 - Python-based automation for power system analysis  
 - Pandapower load flow simulation  
 - Time-series load modelling (hourly profiles)  
-- Voltage profile and line loading analysis  
+- Voltage profile, line loading analysis and violation check  
 - Network topology visualisation through coordinates and connectivity 
 - Data quality checks (missing buses, invalid lines, etc.)
 
@@ -81,7 +81,7 @@ ieee33-sql-python-demo/
 
 ---
 
-## ⚙️ How to Run
+## How to Run
 
 2. Run the main script: python src/run_demo.py 
 
@@ -89,7 +89,7 @@ ieee33-sql-python-demo/
 
 ---
 
-## 📌 Future Improvements
+## Future Improvements
 
 - Integration with real network datasets (e.g. NEM)  
 - DER/PV modelling and voltage rise analysis  

@@ -295,6 +295,39 @@ plt.savefig("outputs/voltage_timeseries_selected_buses.png", dpi=200)
 plt.close()
 
 
+print("\n ++++ Violation check ++++")
+
+# Voltage limits 
+V_MIN = 0.95
+V_MAX = 1.05
+
+# Thermal limit
+LOADING_LIMIT = 100  # %
+
+# Voltage check
+vmin = net.res_bus["vm_pu"].min()
+vmax = net.res_bus["vm_pu"].max()
+
+print(f"Min voltage: {vmin:.3f} pu")
+print(f"Max voltage: {vmax:.3f} pu")
+
+if vmin < V_MIN or vmax > V_MAX:
+    print("Voltage violation detected")
+else:
+    print(" Voltage within limits")
+
+# -------------------------------
+# Line loading check
+# -------------------------------
+lmax = net.res_line["loading_percent"].max()
+
+print(f"Max line loading: {lmax:.2f} %")
+
+if lmax > LOADING_LIMIT:
+    print("Thermal loading violation detected")
+else:
+    print("No thermal violations")
+
 conn.close()
 
 print("\nDONE")
